@@ -4,13 +4,14 @@
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
   <body>
-    <form method="POST" action="/form">
+    <form method="POST" action="/form" enctype="multipart/form-data">
       <input type="text" name="name" placeholder="Your Name" value="<%= data.name || '' %>">
       <input type="email" name="email" placeholder="Your Email" value="<%= data.email || '' %>">
       <div class="checkbox-container">
         <input type="checkbox" name="subscribe" <%= data.subscribe ? 'checked' : '' %>> 
         Subscribe to newsletter
       </div>
+      <input type="file" name="image">
       <button type="submit">Submit</button>
     </form>
     <div>
