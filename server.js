@@ -7,6 +7,7 @@ const path = require('path');
 
 app.set('view engine', 'ejs');
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/home', (req, res) => {
     res.render('home', { contactUrl: '/contact', aboutUrl: '/about' });
@@ -21,8 +22,11 @@ app.get('/contact', (req, res) => {
 });
 
 app.get('/form', (req, res) => {
-  console.dir(req, { depth: null, color: true });
   res.render('form', { title: "Form Test", data: req.query });
+});
+
+app.post('/form', (req, res) => {
+  res.render('form', { title: "Form Test", data: req.body });
 });
 
 app.listen(port, () => {

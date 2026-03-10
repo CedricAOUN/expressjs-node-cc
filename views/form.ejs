@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
   <body>
-    <form method="GET" action="/form">
+    <form method="POST" action="/form">
       <input type="text" name="name" placeholder="Your Name" value="<%= data.name || '' %>">
       <input type="email" name="email" placeholder="Your Email" value="<%= data.email || '' %>">
       <div class="checkbox-container">
