@@ -14,6 +14,7 @@ const cfg = {
 
 app.set('view engine', 'ejs');
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
+app.use('/uploads', express.static(cfg.dir.uploads));
 app.use(express.urlencoded({ extended: true }));
 
 
