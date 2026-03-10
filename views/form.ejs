@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <form method="GET" action="/form">
+      <input type="text" name="name" placeholder="Your Name" value="<%= data.name || '' %>">
+      <input type="email" name="email" placeholder="Your Email" value="<%= data.email || '' %>">
+      <div class="checkbox-container">
+        <input type="checkbox" name="subscribe" <%= data.subscribe ? 'checked' : '' %>> 
+        Subscribe to newsletter
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div>
+      <h2>Debug</h2>
+      <pre><%= JSON.stringify(data, null, 2) %></pre>
+    </div>
+  </body>
+</html>
